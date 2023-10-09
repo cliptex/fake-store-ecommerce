@@ -1,0 +1,37 @@
+.card-comp {
+    padding: 1rem;
+    height: 50vh;
+    cursor: pointer;
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.356);
+
+    .card-comp-text{
+        position: absolute;
+        bottom: 0%;
+        left: 50%;
+        max-height: 35%;
+        width: 100%;
+        transform: translateX(-50%);
+        -webkit-transform: translateX(-50%);
+        -moz-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        -o-transform: translateX(-50%);
+}
+    
+    .card-header {
+        max-height: 75%;
+        min-height: 75%;
+        @media (min-width: 992px) {
+            display: flex;
+            align-items: center;
+            max-height: 65%;
+            min-height: 65%; 
+        }
+        img {
+        object-position: center;
+        height: 100%;
+        @media (min-width: 992px) {
+            height: auto; 
+        }
+        }
+    }   
+}

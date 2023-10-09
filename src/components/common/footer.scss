@@ -1,0 +1,93 @@
+@use '../../styles/variables' as v;
+
+footer {
+    a {
+        &:hover {
+            color: v.$color3;
+        }
+    }
+    .row {
+        gap: 1rem 3rem;
+        justify-content: center;
+        height: 100%;
+        margin: 0 auto 2rem auto;
+        @media (min-width:768px) {
+            gap: 0;
+            margin: 0;
+        }
+        div[class^="col"] {
+            display: flex;
+            flex-direction: column;
+            margin: 0 auto;
+            text-align: center;
+            gap: 1rem;
+    
+            @media (min-width:768px) {
+                border-top: 1px solid v.$color2;
+                align-items: center;
+                padding: 2rem;
+                text-align: justify;
+                margin: 0;
+            }
+
+            #more {
+                cursor: pointer;
+            }
+            
+            #brands {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                height: 100%;
+
+                
+
+                @media (min-width:768px) {
+                    height: 100%;
+                    
+                    a {
+                        font-size: 2rem;
+                    }
+                }
+            }
+
+            #contact {
+                width: 100%;
+                min-width: 100%;
+                display: flex;
+                flex-direction: column;
+                gap: 1rem 0;
+
+                a {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    align-items: center;
+                    gap: .5rem;
+                    font-size: 1rem;
+
+                    @media (min-width:768px) {
+                        font-size: 1.1rem;
+                    }
+    
+                }
+            }
+
+            a {
+                font-size: 1.2rem;
+            }
+            &:first-child {
+                
+                border-right: 1px solid v.$color2;
+                
+    
+                p {
+                    @media (min-width: 768px) {
+                        font-size: 13px;
+                    }
+            } 
+            }
+        }
+    }
+    
+}

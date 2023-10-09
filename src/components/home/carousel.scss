@@ -1,0 +1,44 @@
+@use '../../styles/variables' as v;
+
+.carouselItem {
+    padding: 1rem 0;
+    text-align: center;
+    height: 25vh;
+    position: relative;
+    border: 2px solid v.$color2;
+    background-color: #CCCCCC;
+    overflow: hidden;
+
+    @media(min-width:768px) {
+        height: 35vh;
+        @media(min-width:992px) {
+            height: 45vh;
+        }
+    }
+
+    img {
+        position: absolute;
+        width: 40vw;
+        right: 0;
+        filter: grayscale(100%) brightness(80%);
+        object-fit: cover;
+        -webkit-filter: grayscale(100%) brightness(80%);
+}
+    .carouselText {
+        font-weight: 500;
+        position: absolute;
+        color: v.$color4;
+        text-align: center;
+        left: 33%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+        @media (min-width:768px) {
+            font-size: 1.4rem;
+            width: 35%;
+        }
+}
+}
