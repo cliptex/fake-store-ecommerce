@@ -9,7 +9,6 @@ export const SwiperSlider = () => {
 
   const [data, setData] = useState([])
   const [spinner, setSpinner] = useState(false)
-  const [cardWidth, setCardWidth] = useState("5.3")
 
     useEffect(() => {
       setSpinner(true)
@@ -22,17 +21,7 @@ export const SwiperSlider = () => {
         getData()
     }, [])
   
-    useEffect(() => {
-      const handleResize = () => {
-        setCardWidth(window.innerWidth);
-      };
     
-      window.addEventListener("resize", handleResize);
-    
-      return () => {
-        window.removeEventListener("resize", handleResize);
-      };
-    }, [cardWidth]);
   
   return (
       <Container  className="text-center">
@@ -45,15 +34,19 @@ export const SwiperSlider = () => {
           :
           <Swiper
       spaceBetween={50}
-            slidesPerView={
-              (cardWidth < 768)
-                ? 1.3
-                : (cardWidth < 992)
-                  ? 2.3
-                  : (cardWidth < 1200)
-                    ? 4.1
-                    : 5.3}
+            slidesPerView={1}
             className='my-5'
+            breakpoints={{
+              576: {
+                slidesPerView: 2,
+              },
+              768: {
+                slidesPerView: 3,
+              },
+              992: {
+                slidesPerView: 4,
+              },
+            }}
       >
         {
           
