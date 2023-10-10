@@ -52,7 +52,7 @@ export const SwiperComp = ({ type }) => {
           >
             {data.map((item) => (
               <SwiperSlide key={item.id} className="swiper-item">
-                <CardComp {...item} />
+                <CardComp item={item} />
               </SwiperSlide>
             ))}
           </Swiper>

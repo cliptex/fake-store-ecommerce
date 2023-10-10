@@ -1,7 +1,8 @@
+/* eslint-disable react/prop-types */
 import { Card } from "react-bootstrap"
 import './card.scss'
 
-const CardComp = (item) => {
+const CardComp = ({item}) => {
   return (
     <Card className="card-comp">
       <Card.Header className="card-header">

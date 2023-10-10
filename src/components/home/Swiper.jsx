@@ -68,7 +68,7 @@ export const SwiperSlider = () => {
               key={item.id}
               className="swiper-item"
             >
-              <CardComp {...item} />
+              <CardComp item = {item} />
             </SwiperSlide>
           ))
         }
