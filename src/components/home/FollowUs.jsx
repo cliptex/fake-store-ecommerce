@@ -4,7 +4,8 @@ import {AiFillInstagram} from 'react-icons/ai'
 import './followus.scss'
 const FollowUs = () => {
   return (
-      <Container className="followUs">
+    <Container fluid >
+      <div className="followUs">
           <h2>{data.followUs.title}</h2>
           {data.followUs.content}
           <Button
@@ -13,7 +14,8 @@ const FollowUs = () => {
               href="https://instagram.com"
           ><AiFillInstagram style={{fontSize:"1.7rem"}} />
                {data.followUs.btn}
-          </Button>
+        </Button>
+        </div>
     </Container>
   )
 }

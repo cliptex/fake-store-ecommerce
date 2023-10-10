@@ -6,7 +6,8 @@
     height: 25vh;
     position: relative;
     border: 2px solid v.$color2;
-    background-color: #CCCCCC;
+    background: rgb(204,204,204);
+background: linear-gradient(290deg, rgba(204,204,204,1) 48%, rgba(33, 149, 243, 0.623) 100%);
     overflow: hidden;
 
     @media(min-width:768px) {

@@ -5,6 +5,7 @@ import './discover.scss'
 const Discover = () => {
   return (
       <Container className="discover">
+          <h2 className="my-5 text-center">CATEGORIES</h2>
           <Row>
               {
                   discover.map((item,i) => (

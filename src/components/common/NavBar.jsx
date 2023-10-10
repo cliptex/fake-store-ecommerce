@@ -22,7 +22,7 @@ function NavBar() {
             </Nav>
           <Navbar.Brand className="me-auto fs-2 d-none d-md-block" href="#home">X Store</Navbar.Brand>
           
-                <Nav.Link href='#' className='ms-auto'> <BasketShop /> </Nav.Link>
+                <Nav.Link href='#' className='ms-auto basketIcon'> <BasketShop /> </Nav.Link>
           
         </Navbar.Collapse>
         

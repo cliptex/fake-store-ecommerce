@@ -3,7 +3,12 @@ import 'swiper/css';
 import { Button, Container, Spinner } from 'react-bootstrap';
 import { useEffect, useState } from 'react';
 import CardComp from '../../helpers/card/card';
+import 'swiper/css/navigation';
 const DATA_API = import.meta.env.VITE_REACT_APP_CLOTHES_API;
+import { Navigation } from 'swiper/modules';
+import { GrPrevious, GrNext } from 'react-icons/gr'
+import './swiper.scss'
+
 
 export const SwiperSlider = () => {
 
@@ -22,29 +27,37 @@ export const SwiperSlider = () => {
     }, [])
   
     
-  
+    
   return (
-      <Container  className="text-center">
+    <Container className="text-center">
       <h3>Our Selections for You</h3>
       {
         spinner
-          ? <Container className="text-center" fluid>
+          ?
+          <Container className="text-center" fluid>
           <Spinner />
           </Container>
           :
-          <Swiper
-      spaceBetween={50}
+          <Container fluid className="swiper-inside">
+            <GrPrevious className="prev arrow me-3" />
+            <Swiper
+              className='my-5'
+            modules={[Navigation]}
+            spaceBetween={50}
             slidesPerView={1}
-            className='my-5'
+            navigation={{
+              prevEl: '.prev',
+              nextEl: '.next'
+          }} 
             breakpoints={{
-              576: {
-                slidesPerView: 2,
-              },
               768: {
-                slidesPerView: 3,
+                slidesPerView: 2.1,
               },
               992: {
-                slidesPerView: 4,
+                slidesPerView: 3.1,
+              },
+              1200: {
+                slidesPerView: 4.1,
               },
             }}
       >
@@ -59,8 +72,11 @@ export const SwiperSlider = () => {
             </SwiperSlide>
           ))
         }
-          </Swiper>}
-          <Button variant='outline-dark'>See All</Button>
+            </Swiper>
+            <GrNext className="next arrow ms-3"  />
+            </Container>
+          }
+          <Button variant='outline-dark' className="w-50">See All</Button>
     </Container>
   )
 }
