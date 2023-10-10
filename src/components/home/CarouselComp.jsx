@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { Carousel, Container, Image, Spinner } from "react-bootstrap";
 import './carousel.scss'
-import StarRating from "../../helpers/create-start/StartRing";
+import StarRating from "../../helpers/create-star/StarRing";
+
 
 const DATA_API = import.meta.env.VITE_REACT_APP_CLOTHES_API;
 

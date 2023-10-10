@@ -1,7 +1,13 @@
+import Spacer from "../../components/common/spacer"
+import AllProduct from "../../components/products/AllProduct"
+
 
 const ProductsPage = () => {
   return (
-    <div>ProductsPage</div>
+    <>
+      <Spacer />
+      <AllProduct />
+    </>
   )
 }
 
