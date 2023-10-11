@@ -11,7 +11,7 @@ function NavBar() {
   return (
     <Navbar
       expand="md"
-      sticky='top'
+      fixed='top'
       className="bg-body-tertiary fs-5 z-9">
       <Container >
       <Navbar.Brand className="me-auto fs-2 d-block d-md-none" as={Link} to="/">X Store</Navbar.Brand>

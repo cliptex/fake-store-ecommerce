@@ -26,13 +26,13 @@ export const SwiperComp = ({ type }) => {
             
             breakpoints={{
               768: {
-                slidesPerView: 2.1,
+                slidesPerView: 2,
               },
               992: {
-                slidesPerView: 3.1,
+                slidesPerView: 3,
               },
               1200: {
-                slidesPerView: 4.1,
+                slidesPerView: 4,
               },
             }}
           >

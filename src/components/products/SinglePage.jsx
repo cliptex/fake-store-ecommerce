@@ -8,7 +8,7 @@ const SinglePage = () => {
   return (
       <>
           <Spacer />
-      <SinglePageCard {...params} />
+          <SinglePageCard {...params} />
           <Spacer />
       </>
   )

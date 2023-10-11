@@ -17,18 +17,18 @@ function SinglePageCard(id) {
   return (
       <Container className='single-page-card'>
           <Row>
-              <Col sm={7}>
+              <Col md={7}>
               <Image src={el[0]?.image} />
               </Col>
-              <Col className='single-line' sm={1}>
+              <Col className='single-line d-none d-md-block' md={1}>
               </Col>
-              <Col className="single-text-area my-5" sm={4}>
+              <Col className="single-text-area my-5" md={4}>
                   <h2 className="text-center">{el[0]?.title}</h2>
                   <div className="d-flex ">
                   <h4 className='me-5'>$ {el[0]?.price} </h4>
                       <StarRating rate={el[0]?.rating.rate} />
                   </div>
-                  <p className=''>{el[0]?.description} </p>
+                  <p>{el[0]?.description} </p>
                   <Button>Add to Basket</Button>
               </Col>
           </Row>

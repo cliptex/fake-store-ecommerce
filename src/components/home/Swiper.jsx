@@ -20,7 +20,7 @@ const store = useContext(DataApi)
     <Container className="text-center">
       <h3>Our Selections for You</h3>
       {
-          <Container fluid className="swiper-inside">
+          <Container fluid className=" swiper-inside">
             <GrPrevious className="prev arrow me-3" />
             <Swiper
               className='my-5'
