@@ -36,7 +36,7 @@ const CardComp = ({ item }) => {
           </Link>
         </Card.Body>
         <Button
-          variant="outline-primary" className="card-btn d-none w-50" >
+          variant="outline-primary" className="card-btn d-none" >
           Add to Basket</Button>
     </Card>
       </>
