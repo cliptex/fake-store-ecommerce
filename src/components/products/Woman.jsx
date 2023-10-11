@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import { Container } from "react-bootstrap"
 import ProductCardPart from "../../helpers/products-page/product-card"
-import Spacer from "../common/Spacer"
+import Spacer from "../common/spacer"
 
 const Woman = () => {
   return (

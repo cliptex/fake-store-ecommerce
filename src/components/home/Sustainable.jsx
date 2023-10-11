@@ -6,7 +6,7 @@ const Sustainable = () => {
         <Container className="sustianable" > 
             <Row>
                 <Col>
-                    <Image src="/photos/home-page/sustainable.png" />
+                <a target="blank" href="https://kids.nationalgeographic.com/nature/save-the-earth"><Image src="/photos/home-page/sustainable.png" /></a>
                 </Col>
             </Row>
       </Container>

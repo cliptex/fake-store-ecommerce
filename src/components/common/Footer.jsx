@@ -5,6 +5,7 @@ import { HiMail } from 'react-icons/hi'
 import { AiFillInstagram } from 'react-icons/ai'
 import './footer.scss'
 import { useRef, useState } from "react"
+import { Link } from "react-router-dom"
 
 const Footer = () => {
 
@@ -13,24 +14,30 @@ const Footer = () => {
     const handleClick = () => { 
         setText(!text)
     }
-    
-    
-
-
     return (
       <footer>
       <Container fluid>
           <Row className="text-center ">
               <Col md={4}>
-                  <a style={{fontSize:"1.7rem"}} href="/">{data.store.name}</a>
-                  <p className="fs-4" ref={description}>{text ? data.store.desc : data.store.halfDesc}<a id="more" className="fs-4 custom-cursor" onClick={handleClick}> { text ? "Less More" : "Read More..."}</a> </p>
+                        <Link
+                            style={{ fontSize: "1.7rem" }}
+                            to="/">
+                            {data.store.name} </Link> 
+                        <p className="fs-4" ref={description}>{text
+                            ? data.store.desc
+                            : data.store.halfDesc}<a id="more" className="fs-4 custom-cursor" onClick={handleClick}> {text
+                                ? "Less More"
+                                : "Read More..."}</a> </p>
               </Col>
               <Col xs={5} md={4}>
                   <h4>Contact</h4>
                   <div id="contact">
-                  <div><a href={`tel:${data.contact.tel}`}><BsFillTelephoneFill/>  {data.contact.tel}</a></div>
-                  <div><a href={`mailto:${data.contact.email}`}><HiMail/> {data.contact.email}</a></div>
-                  <iframe className="img-fluid" src={data.contact.address}  loading="lazy" > asd</iframe>
+                            <div>
+                                <a href={`tel:${data.contact.tel}`}><BsFillTelephoneFill />  {data.contact.tel}</a>
+                            </div>
+                            <div>
+                                <a href={`mailto:${data.contact.email}`}><HiMail /> {data.contact.email}</a></div>
+                  <iframe className="img-fluid" src={data.contact.address}  loading="lazy" > </iframe>
                   </div>
                   
               </Col>

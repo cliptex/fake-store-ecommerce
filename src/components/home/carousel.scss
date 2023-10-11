@@ -1,4 +1,9 @@
 @use '../../styles/variables' as v;
+@use '../../styles/mixin' as m;
+
+.carousel-comp{
+    cursor: pointer;
+}
 
 .carouselItem {
     padding: 1rem 0;
@@ -7,7 +12,7 @@
     position: relative;
     border: 2px solid v.$color2;
     background: rgb(204,204,204);
-background: linear-gradient(290deg, rgba(204,204,204,1) 48%, rgba(33, 149, 243, 0.623) 100%);
+    background: linear-gradient(290deg, rgba(204,204,204,1) 48%, rgba(33, 149, 243, 0.623) 100%);
     overflow: hidden;
 
     @media(min-width:768px) {
@@ -21,8 +26,8 @@ background: linear-gradient(290deg, rgba(204,204,204,1) 48%, rgba(33, 149, 243, 
         position: absolute;
         width: 40vw;
         right: 0;
-        filter: grayscale(100%) brightness(80%);
         object-fit: cover;
+        filter: grayscale(100%) brightness(80%);
         -webkit-filter: grayscale(100%) brightness(80%);
 }
     .carouselText {
@@ -32,11 +37,8 @@ background: linear-gradient(290deg, rgba(204,204,204,1) 48%, rgba(33, 149, 243, 
         text-align: center;
         left: 33%;
         top: 50%;
-        transform: translate(-50%, -50%);
-        -webkit-transform: translate(-50%, -50%);
-        -moz-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-        -o-transform: translate(-50%, -50%);
+        @include m.transform-translate;
+
         @media (min-width:768px) {
             font-size: 1.4rem;
             width: 35%;

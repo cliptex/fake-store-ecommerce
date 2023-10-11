@@ -1,42 +1,27 @@
-import { useEffect, useState } from "react";
-import { Carousel, Container, Image, Spinner } from "react-bootstrap";
+import { useContext } from "react";
+import { Carousel, Image } from "react-bootstrap";
 import './carousel.scss'
 import StarRating from "../../helpers/create-star/StarRing";
+import DataApi from "../context/store";
+import { Link } from "react-router-dom";
 
-
-const DATA_API = import.meta.env.VITE_REACT_APP_CLOTHES_API;
 
 const CarouselComp = () => {
-  
+  const store = useContext(DataApi)
 
-    const [data, setData] = useState([])
-    const [spinner, setSpinner] = useState(false)
 
-    useEffect(() => {
-      setSpinner(true)
-        const getData = async () => {
-            await fetch(`${DATA_API}/products`)
-                .then((res) => res.json())
-                .then((data) => setData(data))
-                setSpinner(false)
-        }
-        getData()
-    }, [])
   return (
     
-    spinner
-      ? <Container className="text-center">
-      <Spinner />
-      </Container>
-      :
-      <Carousel>
+      <Carousel className="carousel-comp">
       {
-              data
+              store
                   .filter((item) => (item.rating.rate >= 4 && item.category.includes("clothing") ))
                   .map((item) => (
-                <Carousel.Item className="carouselItem" key={item.id}>
+                    <Carousel.Item className="carouselItem" key={item.id}>
+                      <Link to={"products"}>
                       <Image
-                          src={item.image}/>
+                          src={item.image} />
+                        </Link>
                 <Carousel.Caption className="carouselText">
                   <p>{item.title} </p>
                         {<StarRating rate={item.rating.rate} />}
@@ -44,7 +29,8 @@ const CarouselComp = () => {
               </Carousel.Item>
               ))
     }
-        </Carousel>
+      </Carousel>
+      
   )
 }
 

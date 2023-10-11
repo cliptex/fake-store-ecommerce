@@ -1,43 +1,25 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
-import { Button, Container, Spinner } from 'react-bootstrap';
-import { useEffect, useState } from 'react';
+import { Button, Container } from 'react-bootstrap';
+import {useContext } from 'react';
 import CardComp from '../../helpers/card/card';
 import 'swiper/css/navigation';
-const DATA_API = import.meta.env.VITE_REACT_APP_CLOTHES_API;
 import { Navigation } from 'swiper/modules';
 import { GrPrevious, GrNext } from 'react-icons/gr'
 import './swiper.scss'
+import { Link } from 'react-router-dom';
+import DataApi from '../context/store';
 
 
 export const SwiperSlider = () => {
+const store = useContext(DataApi)
 
-  const [data, setData] = useState([])
-  const [spinner, setSpinner] = useState(false)
-
-    useEffect(() => {
-      setSpinner(true)
-        const getData = async () => {
-            await fetch(`${DATA_API}/products`)
-                .then((res) => res.json())
-                .then((data) => setData(data))
-                setSpinner(false)
-        }
-        getData()
-    }, [])
-  
     
     
   return (
     <Container className="text-center">
       <h3>Our Selections for You</h3>
       {
-        spinner
-          ?
-          <Container className="text-center" fluid>
-          <Spinner />
-          </Container>
-          :
           <Container fluid className="swiper-inside">
             <GrPrevious className="prev arrow me-3" />
             <Swiper
@@ -63,7 +45,7 @@ export const SwiperSlider = () => {
       >
         {
           
-          data.map((item) => (
+          store.map((item) => (
             <SwiperSlide
               key={item.id}
               className="swiper-item"
@@ -76,7 +58,7 @@ export const SwiperSlider = () => {
             <GrNext className="next arrow ms-3"  />
             </Container>
           }
-          <Button variant='outline-dark' className="w-50">See All</Button>
+          <Link to="/products"><Button variant='outline-dark' className="w-50">See All</Button></Link>
     </Container>
   )
 }

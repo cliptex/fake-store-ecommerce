@@ -1,24 +1,23 @@
 @use '../../styles/variables' as v;
+@use '../../styles/mixin' as m;
 .discover {
     
     div[class^="mb"] {
         position: relative;
         overflow: hidden;
 
+        &:hover {
+
+            img {
+                @include m.transform-scale;
+            }
+        }
+
         img {
+            overflow: hidden;
             cursor: pointer;
-            transition: transform .4s ease-in-out ;
-            -webkit-transition: transform .4s ease-in-out ;
-            -moz-transition: transform .4s ease-in-out ;
-            -ms-transition: transform .4s ease-in-out ;
-            -o-transition: transform .4s ease-in-out ;
-            &:hover {
-                transform:scale(1.2) ;
-                -webkit-transform:scale(1.2) ;
-                -moz-transform:scale(1.2) ;
-                -ms-transform:scale(1.2) ;
-                -o-transform:scale(1.2) ;
-}
+            @include m.transition-transform;
+            
 }
 
         .texts {

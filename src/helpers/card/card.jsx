@@ -1,23 +1,45 @@
 /* eslint-disable react/prop-types */
-import { Card } from "react-bootstrap"
+import { Button, Card } from "react-bootstrap"
 import './card.scss'
+import { Link } from "react-router-dom";
+import StarRating from "../create-star/StarRing";
 
-const CardComp = ({item}) => {
+const CardComp = ({ item }) => {
   return (
+    <>
     <Card className="card-comp">
       <Card.Header className="card-header">
+      <Link to={`/products/${item.id}`}>
           <Card.Img
               variant="top"
               src={item.image}
               className="img-fluid"
-        />
+          />
+          </Link>
         </Card.Header>
-          <Card.Body className="card-comp-text">
-        <Card.Subtitle>{item.title}</Card.Subtitle>
+      <Card.Body className="card-comp-text">
+      <Link to={`/products/${item.id}`}>
+          <Card.Subtitle>
+            <StarRating rate={item.rating.rate} />
+        </Card.Subtitle>
         <br />
-        <Card.Title>$ {item.price}</Card.Title>
-          </Card.Body>
+            <Card.Subtitle >
+              {
+                item.title.length > 20
+                  ?  (item.title.slice(0, 19) + "..." )
+                  :  item.title
+              }
+              
+            </Card.Subtitle>
+        <br />
+          <Card.Title>$ {item.price}</Card.Title>
+          </Link>
+        </Card.Body>
+        <Button
+          variant="outline-primary" className="card-btn d-none w-50" >
+          Add to Basket</Button>
     </Card>
+      </>
   )
 }
 
