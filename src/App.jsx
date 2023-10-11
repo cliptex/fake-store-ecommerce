@@ -14,7 +14,8 @@ function App() {
         .then((data) => setData(data))
     };
     getData();
-  },[]);
+  }, []);
+
 
 
   return (
