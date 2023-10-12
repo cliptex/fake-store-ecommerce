@@ -4,6 +4,7 @@ import DataApi from '../context/store';
 import StarRating from '../../helpers/create-star/StarRing';
 import './singlePageCard.scss'
 import BasketApi from '../context/basket';
+import toast from 'react-hot-toast';
 
 function SinglePageCard(id) {
     const store = useContext(DataApi)
@@ -11,6 +12,7 @@ function SinglePageCard(id) {
 
     const basket = useContext(BasketApi)
     useEffect(() => {
+        toast.success('Product added to the shopping basket')
     }, [basket.basket])
     
     useEffect(() => {
