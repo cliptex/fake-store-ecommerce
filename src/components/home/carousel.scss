@@ -8,7 +8,7 @@
 .carouselItem {
     padding: 1rem 0;
     text-align: center;
-    height: 40vh;
+    height: 30vh;
     position: relative;
     border: 2px solid v.$color2;
     background: rgb(204,204,204);
@@ -25,11 +25,18 @@
 
     img {
         position: absolute;
-        width: 40vw;
+        width: 40%;
         right: 0;
         object-fit: cover;
         filter: grayscale(100%) brightness(80%);
         -webkit-filter: grayscale(100%) brightness(80%);
+        top: 15%;
+        bottom: 10%;
+        @media (min-width:768px) {
+            top: 5%;
+            max-width: 70%;
+        }
+        
 }
     .carouselText {
         font-weight: 500;
