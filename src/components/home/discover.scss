@@ -6,7 +6,21 @@
         position: relative;
         overflow: hidden;
 
+        p {
+            opacity: 0;
+        }
+
         &:hover {
+
+            p {
+                color: linear-gradient(to right, #fff, v.$color5);
+                opacity: 1;
+                transition: all 1.3s;
+                -webkit-transition: all 1.3s;
+                -moz-transition: all 1.3s;
+                -ms-transition: all 1.3s;
+                -o-transition: all 1.3s;
+            }
 
             img {
                 @include m.transform-scale;
@@ -34,3 +48,4 @@
     }
     
 }
+
