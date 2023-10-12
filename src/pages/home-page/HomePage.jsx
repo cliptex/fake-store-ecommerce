@@ -16,7 +16,6 @@ const HomePage = () => {
       <Spacer />
       <FollowUs />
       <Spacer />
-      <Spacer />
       <SwiperSlider />
       <Spacer />
       <Sustainable />

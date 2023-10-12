@@ -1,14 +1,15 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import {BsHandbag} from 'react-icons/bs'
+import BasketApi from '../context/basket';
 
 function BasketShop() {
   const [show, setShow] = useState(false);
 
+  const store = useContext(BasketApi)
   const handleShow = () => {
     show === true ? setShow(false) : setShow(true)
   };
-
   return (
     <>
       <BsHandbag variant="primary" onClick={handleShow}/>
@@ -17,7 +18,12 @@ function BasketShop() {
           <Offcanvas.Title>My Basket</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
-          ITEMS
+        <p>
+          {store.basket.length
+            ? `Number of Items in the Shopping Basket: ${store.basket.length}`
+            : "Your Shopping Basket is Empty 🙁"}
+          </p>
+          
         </Offcanvas.Body>
       </Offcanvas>
     </>

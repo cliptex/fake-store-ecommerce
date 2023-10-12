@@ -3,16 +3,20 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import BasketShop from './BasketShop';
-import { NavDropdown } from 'react-bootstrap';
+import { Badge, NavDropdown } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import './navbar.scss'
+import { useContext } from 'react';
+import BasketApi from '../context/basket';
 
 function NavBar() {
+  const store = useContext(BasketApi)
 
   return (
     <Navbar
       expand="md"
       fixed='top'
-      className="bg-body-tertiary fs-5 z-9">
+      className="bg-body-tertiary fs-5 z-9 navbar">
       <Container >
       <Navbar.Brand className="me-auto fs-2 d-block d-md-none" as={Link} to="/">X Store</Navbar.Brand>
         <Navbar.Toggle className="ms-auto" aria-controls="basic-navbar-nav" />
@@ -35,7 +39,10 @@ function NavBar() {
             </Nav>
           <Navbar.Brand className="me-auto fs-2 d-none d-md-block" as={Link} to="/">X Store</Navbar.Brand>
           
-                <Nav.Link href='#' className='ms-auto basketIcon'> <BasketShop /> </Nav.Link>
+          <Nav.Link href='#' className='ms-auto basketIcon'>
+            <BasketShop className="basketIcon" />
+            <Badge bg="danger">{store.basket.length} </Badge>
+      <span className="visually-hidden">Item in Basket</span> </Nav.Link>
           
         </Navbar.Collapse>
         

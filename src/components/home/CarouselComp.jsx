@@ -8,8 +8,6 @@ import { Link } from "react-router-dom";
 
 const CarouselComp = () => {
   const store = useContext(DataApi)
-
-
   return (
     
       <Carousel className="carousel-comp">

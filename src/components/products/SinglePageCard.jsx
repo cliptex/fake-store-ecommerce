@@ -3,16 +3,26 @@ import { Button, Col, Container, Image, Row } from 'react-bootstrap';
 import DataApi from '../context/store';
 import StarRating from '../../helpers/create-star/StarRing';
 import './singlePageCard.scss'
+import BasketApi from '../context/basket';
 
 function SinglePageCard(id) {
     const store = useContext(DataApi)
     const [el, setEl] = useState([])
+
+    const basket = useContext(BasketApi)
+    useEffect(() => {
+    }, [basket.basket])
     
     useEffect(() => {
         const filtredItem = store.filter((item) => item.id == id.id)
         setEl(filtredItem)
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    },[id])
+    }, [id, basket])
+    
+    const handleClick = (e) => {
+      const newItem = {product: e.target.name}
+      basket.setBasket((prev) => [...prev, newItem] );
+    };
 
   return (
       <Container className='single-page-card'>
@@ -29,7 +39,10 @@ function SinglePageCard(id) {
                       <StarRating rate={el[0]?.rating.rate} />
                   </div>
                   <p>{el[0]?.description} </p>
-                  <Button>Add to Basket</Button>
+                  <Button
+                      onClick={handleClick}
+                      name={el[0]?.id}
+                  >Add to Basket</Button>
               </Col>
           </Row>
     </Container>

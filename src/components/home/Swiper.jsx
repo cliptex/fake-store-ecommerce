@@ -23,9 +23,9 @@ const store = useContext(DataApi)
           <Container fluid className=" swiper-inside">
             <GrPrevious className="prev arrow me-3" />
             <Swiper
-              className='my-5'
+              className='my-5 swiper'
             modules={[Navigation]}
-            spaceBetween={50}
+            spaceBetween={40}
             slidesPerView={1}
             navigation={{
               prevEl: '.prev',
@@ -33,18 +33,17 @@ const store = useContext(DataApi)
           }} 
             breakpoints={{
               768: {
-                slidesPerView: 2.1,
+                slidesPerView: 2,
               },
               992: {
-                slidesPerView: 3.1,
+                slidesPerView: 3,
               },
               1200: {
-                slidesPerView: 4.1,
+                slidesPerView: 4,
               },
             }}
       >
         {
-          
           store.map((item) => (
             <SwiperSlide
               key={item.id}
