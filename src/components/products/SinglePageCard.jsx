@@ -24,7 +24,7 @@ function SinglePageCard(id) {
     const handleClick = (e) => {
         toast.success('Product added to the shopping basket')
       const newItem = {product: e.target.name}
-        basket.setBasket((prev) => [...prev, newItem]
+        basket.setBasket((prev) => [...prev, {newItem}]
           );
     };
 

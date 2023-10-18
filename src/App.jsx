@@ -10,8 +10,6 @@ function App() {
   const [data, setData] = useState([]);
   // eslint-disable-next-line no-unused-vars
   const [basket, setBasket] = useState([])
-  // eslint-disable-next-line no-unused-vars
-  const [product, setProduct] = useState([])
 
   useEffect(() => {
     const getData = async () => {

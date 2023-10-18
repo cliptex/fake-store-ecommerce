@@ -15,7 +15,7 @@ const CardComp = ({ item }) => {
   
   const handleClick = (e) => {
     const newItem = {product: e.target.name}
-    store.setBasket((prev) => [...prev, newItem]);
+    store.setBasket((prev) => [...prev, {newItem}])
     toast.success('Product added to the shopping basket')
   };
   
