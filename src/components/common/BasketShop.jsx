@@ -74,7 +74,7 @@ function BasketShop() {
           <Container>
             <Row>
               <Col className='mb-4 mx-2'>
-                <b>Total Price:</b> ${totalPrice}
+                <b>Total Price:</b> ${totalPrice.toFixed(2)}
               </Col>
             </Row>
           </Container>
