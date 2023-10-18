@@ -19,9 +19,9 @@ function BasketShop() {
         </Offcanvas.Header>
         <Offcanvas.Body>
         <p>
-          {store.basket.length
-            ? `Number of Items in the Shopping Basket: ${store.basket.length}`
-            : "Your Shopping Basket is Empty 🙁"}
+          {store.basket.length === 0
+            ? "Your Shopping Basket is Empty 🙁"
+            : `Number of Items in the Shopping Basket: ${store.basket.length}`}
           </p>
           
         </Offcanvas.Body>

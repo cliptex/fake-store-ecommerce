@@ -8,6 +8,7 @@ import Man from "../components/products/Man";
 import Jawlering from "../components/products/Jawlering";
 import Electronics from "../components/products/Electronics";
 import SinglePage from "../components/products/SinglePage";
+import ErrorPage from "../pages/error-page/404";
 
 
 const router = createBrowserRouter([
@@ -53,6 +54,10 @@ const router = createBrowserRouter([
                     }
                 ]
             },
+            {
+                path: "*",
+                element: <ErrorPage />
+            }
         ]
     },
     
